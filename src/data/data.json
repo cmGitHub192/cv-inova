@@ -1,0 +1,152 @@
+{
+    "header": {
+      "name": "Jose Morales",
+      "title": "Ingeniero en Sistemas",
+      "photo": "https://media.istockphoto.com/id/1090878494/es/foto/retrato-de-joven-sonriente-a-hombre-guapo-en-camiseta-polo-azul-aislado-sobre-fondo-gris-de.jpg?s=612x612&w=0&k=20&c=dHFsDEJSZ1kuSO4wTDAEaGOJEF-HuToZ6Gt-E2odc6U="
+    },
+    "personalInfo": {
+      "cedula": "1234567890",
+      "nacionalidad": "Ecuatoriana",
+      "direccion": "Av. Siempre Viva 123, Quito",
+      "discapacidad": "No",
+      "genero": "Masculino",
+      "fechaNacimiento": "01/01/1990",
+      "etnia": "Mestizo",
+      "estadoCivil": "Casado",
+      "cantidadHijos": "2",
+      "actividadesTiempoLibre": "Lectura, deportes, voluntariado",
+      "correo": "user@example.com",
+      "telefono": "0987654321",
+      "linkedin": "linkedin.com/in/user",
+      "disponibilidad": "Jornada completa",
+      "aspiracionSalarial": "1500",
+      "expectativasLaborales": "Busco un ambiente de trabajo desafiante y oportunidades de crecimiento profesional"
+    },
+    "education": {
+      "bachillerato": {
+        "institucion": "Colegio San Francisco",
+        "titulo": "Bachiller en Ciencias",
+        "anioGraduacion": "2008",
+        "anioInicio": "2004",
+        "anioFin": "2008"
+      },
+      "educacionSuperiorNoUniversitaria": {
+        "institucion": "Instituto Tecnológico Superior",
+        "titulo": "Técnico en Programación",
+        "anioGraduacion": "2010",
+        "anioInicio": "2008",
+        "anioFin": "2010"
+      },
+      "educacionSuperiorUniversitaria": {
+        "institucion": "Universidad Salesiana",
+        "titulo": "Ingeniero en Sistemas",
+        "anioGraduacion": "2014",
+        "anioInicio": "2010",
+        "anioFin": "2014"
+      },
+      "educacionCuartoNivel": {
+        "institucion": "Universidad Salesiana",
+        "titulo": "Master en Inteligencia Artificial",
+        "estado": "En progreso",
+        "anioInicio": "2020",
+        "anioFin": "En progreso"
+      }
+    },
+    "certifications": [
+      {
+        "name": "Certificación fullstackJS8",
+        "year": "2007",
+        "institution": "Tech Institute"
+      },
+      {
+        "name": "Certificación fullstackJS8",
+        "year": "2007",
+        "institution": "Tech Institute"
+      },
+      {
+        "name": "Certificación fullstackJS8",
+        "year": "2007",
+        "institution": "Tech Institute"
+      },
+      {
+        "name": "Certificación fullstackJS8",
+        "year": "2007",
+        "institution": "Tech Institute"
+      }
+    ],
+    "experience": [
+      {
+        "company": "Tech Solutions",
+        "position": "Desarrollador Full Stack",
+        "period": "Enero 2021 - Diciembre 2023",
+        "location": "Quito, Ecuador",
+        "description": [
+          "Diseño y desarrollo de aplicaciones web utilizando tecnologías como React.js, Node.js y PostgreSQL",
+          "Implementación de sistemas de autenticación y seguridad de usuarios",
+          "Realización de pruebas unitarias y despliegue de aplicaciones en entornos de producción"
+        ],
+        "benefits": [
+          "Seguro médico privado",
+          "Flexibilidad de horario",
+          "Oportunidades de capacitación"
+        ],
+        "reference": {
+          "name": "Carlos Pérez",
+          "position": "Gerente de Tecnología",
+          "phone": "0987654321"
+        },
+        "salary": "5000"
+      },
+      {
+        "company": "Tech Solutions",
+        "position": "Desarrollador Full Stack",
+        "period": "Enero 2021 - Diciembre 2023",
+        "location": "Quito, Ecuador",
+        "description": [
+          "Diseño y desarrollo de aplicaciones web utilizando tecnologías como React.js, Node.js y PostgreSQL",
+          "Implementación de sistemas de autenticación y seguridad de usuarios",
+          "Realización de pruebas unitarias y despliegue de aplicaciones en entornos de producción"
+        ],
+        "benefits": [
+          "Seguro médico privado",
+          "Flexibilidad de horario",
+          "Oportunidades de capacitación"
+        ],
+        "reference": {
+          "name": "Carlos Pérez",
+          "position": "Gerente de Tecnología",
+          "phone": "0987654321"
+        },
+        "salary": "5000"
+      }
+    ],
+    "languages": [
+      {
+        "name": "Español",
+        "level": "Nativo"
+      },
+      {
+        "name": "Inglés",
+        "level": "B2"
+      }
+    ],
+    "skills": [
+      "Desarrollo Front-End y Back-End",
+      "Gestión de proyectos",
+      "Optimización y resolución de problemas",
+      "Trabajo en equipo"
+    ],
+    "achievements": [
+      "Creé una aplicación usada por 5,000 usuarios activos mensuales",
+      "Reduje el tiempo de carga en un 40% mediante optimización de código"
+    ],
+    "projects": [
+      {
+        "name": "Plataforma de Gestión de Inventarios - TechLogistics S.A.",
+        "period": "2023 - IoT Solutions Inc.",
+        "cargo": "Desarrollador Full Stack",
+        "description": "Desarrollo de una plataforma web para gestionar inventarios en tiempo real implementando integración con dispositivos IoT para el monitoreo automático de existencias."
+      }
+    ]
+  }
+  

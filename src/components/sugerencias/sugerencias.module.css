@@ -1,0 +1,336 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    min-width: 100vw;
+    min-height: calc(100vh - -200px); 
+    background-color: #E9EDF4;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .formContainer, .contactContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 40%;
+    margin: 80px;
+  }
+  
+  .formTitle, .contactTitle {
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #21498e;
+    margin: 0 0 20px 0;
+  }
+  
+  .formSection {
+    position: absolute;
+    width: 570px;
+    height: 317px;
+    flex-shrink: 0;
+    border-radius: 30px;
+    background: #E6E6E6;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 250px;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .formRow {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .halfWidth {
+    flex: 1;
+  }
+  
+  .formInput {
+    background-color: white;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    padding: 15px;
+    box-sizing: border-box;
+    width: 100%;
+    color: #000000;
+  }
+  
+  .formInput::placeholder {
+    color: #aa9b9b;
+  }
+  
+  textarea.formInput {
+    width: 510px;
+    height: 164px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    border: 0.5px solid var(--Foundation-Black-Light, #E7E7E7);
+    background: #FFF;
+    resize: vertical;
+    margin-left: 40px;
+  }
+  
+  .submitButton {
+    background-color: #75bf44;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    width: 90%;
+    height: 43.583px;
+    padding: 12px;
+    font-family: Calibri, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    margin: 10px auto;
+    display: block;
+    font-weight: 700;
+    line-height: normal;
+    margin-right: 20px;
+  }
+  
+  .submitButton:hover {
+    background-color: #5a9c36;
+  }
+  
+  .contactSection {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .contactCard {
+    background-color: #ffffff;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 40px;
+    height: 100px;
+    width: 500px;
+  }
+  
+  .circle {
+    width: 95px;
+    height: 102px;
+    flex-shrink: 0;
+    margin-left: 20px;
+    }
+
+  
+  .contactInfo {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contactName {
+    color: var(--Foundation-Black-Dark, #0E0E0E);
+    font-family: "Segoe UI";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 88.695%; /* 17.739px */
+  }
+  
+  .contactPosition {
+    color: var(--Foundation-Black-Dark, #0E0E0E);
+    font-family: Calibri;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 88.695%; /* 14.191px */
+    margin-top: -10px;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .formContainer, .contactContainer {
+      width: 90%;
+      max-width: 600px;
+    }
+  
+    .formTitle, .contactTitle {
+      font-size: 1.5rem;
+    }
+  
+    .formInput {
+      font-size: 14px;
+    }
+  
+    textarea.formInput {
+      height: 120px;
+    }
+  
+    .submitButton {
+      font-size: 14px;
+      height: 50px;
+    }
+  
+    .contactCard {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .circle {
+      margin-bottom: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .contactCard {
+      flex-direction: row;
+      align-items: center;
+      width: 100%;
+    }
+  
+    .circle {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+    }
+  }
+
+  .imageContainer {
+    position: relative;
+    width: 609px;
+    height: 249px;
+    flex-shrink: 0;
+    margin: 0 auto; 
+  }
+  
+  .hammerImage {
+    border-radius: 20px 20px 0px 0px;
+  }
+  
+  .formTitulo{
+    width: 609px;
+    height: 42px;
+    flex-shrink: 0;
+    color: #000;
+    text-align: center;
+    font-family: "Segoe UI";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 88.695%; /* 28.382px */
+    margin-top: -30px;
+    margin-bottom: 50px;
+  }
+
+  .contactEmail{
+    color: var(--Foundation-Black-Dark, #0E0E0E);
+    font-family: Calibri;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 88.695%; /* 14.191px */
+    margin-top: 0px;
+  }
+  
+  /* Media Queries */
+
+/* Para pantallas pequeñas (tabletas) */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .formContainer, .contactContainer {
+        width: 90%;
+        max-width: 600px;
+        margin: 20px 0; /* Espacio entre secciones */
+    }
+
+    .formTitle, .contactTitle {
+        font-size: 1.5rem;
+    }
+
+    .formInput {
+        font-size: 14px;
+    }
+
+    textarea.formInput {
+        height: 120px;
+    }
+
+    .submitButton {
+        font-size: 14px;
+        height: 50px;
+    }
+
+    .contactCard {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%; /* Aseguramos que el ancho sea completo */
+    }
+
+    .circle {
+        margin-bottom: 10px;
+    }
+
+    .formSection {
+        width: 100%; /* Ajustamos el ancho del contenedor del formulario */
+        margin-top: 20px; /* Espacio superior */
+    }
+
+    .imageContainer {
+        width: 100%; /* Hacemos la imagen responsiva */
+    }
+
+    .formTitulo {
+        width: 100%; /* Ancho completo */
+    }
+}
+
+/* Para pantallas muy pequeñas (móviles) */
+@media (max-width: 480px) {
+    .contactCard {
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+    }
+
+    .circle {
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+    }
+
+    .formInput {
+        padding: 10px; /* Reducimos el padding */
+    }
+
+    .formTitulo {
+        font-size: 24px; /* Ajustamos el tamaño del título */
+    }
+
+    .submitButton {
+        width: 100%; /* Aseguramos que el botón ocupe todo el ancho */
+    }
+
+    .formSection {
+        height: auto; /* Ajustamos la altura para contenido variable */
+    }
+
+    .contactEmail {
+        font-size: 14px; /* Ajustamos el tamaño del texto */
+    }
+}

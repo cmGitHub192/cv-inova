@@ -1,0 +1,16 @@
+version: "3.7"
+
+services:
+  prod:
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    image: frontend-repository-prod-sugerencias  # Cambia el nombre de la imagen
+    container_name: sugerencias-docker-nextjs  # Asegúrate de que sea único
+    ports:
+      - "3023:3000"  # Mapeo del puerto externo 3003 al interno 3000
+    env_file:
+      - .env
+
+volumes:
+  node_modules:

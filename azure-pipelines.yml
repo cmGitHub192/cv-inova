@@ -1,0 +1,45 @@
+trigger:
+  branches:
+    include:
+      - development
+    exclude:
+      - master
+ 
+variables:
+  vmImageName: 'ubuntu-latest'
+ 
+stages:
+- stage: Build
+  displayName: Build stage
+  jobs:
+  - job: Build
+    displayName: Build
+    pool:
+      vmImage: $(vmImageName)
+ 
+    steps:
+    - task: NodeTool@0
+      inputs:
+        versionSpec: '18.x'
+      displayName: 'Install Node.js'
+ 
+    - script: |
+        npm install
+        npm run build
+      displayName: 'npm install and build'
+      env:
+        NEXTAUTH_SECRET: '98E3B2CC28F61492C6934531C828C'
+        NEXTAUTH_URL: 'https://peopleconnectdev.azurewebsites.net'
+        NEXT_PUBLIC_BACKEND_URL: 'http://51.222.110.107:5000'
+ 
+    - task: ArchiveFiles@2
+      displayName: 'Archive files'
+      inputs:
+        rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
+        includeRootFolder: false
+        archiveType: zip
+        archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+        replaceExistingArchive: true
+ 
+    - publish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+      artifact: drop
