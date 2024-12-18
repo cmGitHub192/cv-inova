@@ -58,15 +58,15 @@ export default function CV({ data }) {
               <InfoItem label="Correo" value={data.personalInfo.correo} />
               <InfoItem label="Nacionalidad" value={data.personalInfo.nacionalidad} />
               <InfoItem label="Etnia" value={data.personalInfo.etnia} />
-              <InfoItem label="Dirección" value={data.personalInfo.direccion} />
-              <InfoItem label="Discapacidad" value={data.personalInfo.discapacidad} />
-              <InfoItem label="Género" value={data.personalInfo.genero} />
-              <InfoItem label="Estado Civil" value={data.personalInfo.estadoCivil} />
-              <InfoItem label="Cantidad de Hijos" value={data.personalInfo.cantidadHijos} />
-              <InfoItem label={<span style={{ whiteSpace: 'pre-line' }}>Actividades en {"\n"} Tiempo Libre</span>} value={data.personalInfo.actividadesTiempoLibre}/>
               <InfoItem label="Teléfono" value={data.personalInfo.telefono} />
+              <InfoItem label="Dirección" value={data.personalInfo.direccion} />
+              <InfoItem label="Estado Civil" value={data.personalInfo.estadoCivil} />
               <InfoItem label="Linkedin" value={data.personalInfo.linkedin} />
+              <InfoItem label="Discapacidad" value={data.personalInfo.discapacidad} />
+              <InfoItem label="Cantidad de Hijos" value={data.personalInfo.cantidadHijos} />
               <InfoItem label="Disponibilidad" value={data.personalInfo.disponibilidad} />
+              <InfoItem label="Género" value={data.personalInfo.genero} />
+              <InfoItem label={<span style={{ whiteSpace: 'pre-line' }}>Actividades en {"\n"} Tiempo Libre</span>} value={data.personalInfo.actividadesTiempoLibre}/>
               <InfoItem label="Aspiración Salarial" value={data.personalInfo.aspiracionSalarial} />
               <InfoItem label="Expectativas Laborales" value={data.personalInfo.expectativasLaborales} />
             </div>
@@ -83,7 +83,7 @@ export default function CV({ data }) {
             <EducationItem
               title="Bachillerato"
               institution={data.education.bachillerato.institucion}
-              degree={data.education.bachillerato.titulo}
+              degree={data.education.bachillerato.titulo} 
               yearStart={data.education.bachillerato.anioInicio}
               yearEnd={data.education.bachillerato.anioFin}
             />
@@ -120,15 +120,14 @@ export default function CV({ data }) {
           <div className={styles.certifications}>
             {data.certifications.map((cert, index) => (
               <div key={index} className={styles.certificationItem}>
-                <h4>{cert.name}</h4>
+                <h4>{cert.name}</h4><span>({cert.year})</span>
                 <p>{cert.institution}</p>
-                <span>{cert.year}</span>
               </div>
             ))}
           </div>
         </section>
 
-        {/* Experience */}
+       {/* Experience */}
         <section className={styles.section}>
           <h3 className={styles.sectionTitle}>
             <Briefcase className={styles.sectionIcon} />
@@ -137,35 +136,101 @@ export default function CV({ data }) {
           <div className={styles.experience}>
             {data.experience.map((exp, index) => (
               <div key={index} className={styles.experienceItem}>
+                {/* Header */}
                 <div className={styles.experienceHeader}>
-                  <h4>{exp.company}</h4>
-                  <span>{exp.period}</span>
+                  <h4>
+                    {exp.company} - {exp.position}
+                  </h4>
+                  <div className={styles.periodAndLocation}>
+                    <span>{exp.period}</span>  | <span>{exp.location}</span>
+                  </div>
                 </div>
-                <p className={styles.position}>{exp.position}</p>
-                <p className={styles.location}>{exp.location}</p>
-                <ul className={styles.description}>
-                  {exp.description.map((desc, i) => (
-                    <li key={i}>{desc}</li>
-                  ))}
-                </ul>
-                <div className={styles.benefits}>
-                  <h5>Beneficios:</h5>
-                  <ul>
-                    {exp.benefits.map((benefit, i) => (
-                      <li key={i}>{benefit}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div className={styles.reference}>
-                  <h5>Referencia Laboral:</h5>
-                  <p>{exp.reference.name}</p>
-                  <p>{exp.reference.position}</p>
-                  <p>{exp.reference.phone}</p>
+
+                {/* Two-column layout */}
+                <div className={styles.experienceContent}>
+                  {/* Left Column: Description and Benefits */}
+                  <div className={styles.leftColumn}>
+                    <h4>Descripción:</h4>
+                    <ul className={styles.description}>
+                      {exp.description.map((desc, i) => (
+                        <li key={i}>{desc}</li>
+                      ))}
+                    </ul>
+
+                    <h4>Beneficios:</h4>
+                    <ul className={styles.benefits}>
+                      {exp.benefits.map((benefit, i) => (
+                        <li key={i}>{benefit}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Right Column: Reference and Salary */}
+                  <div className={styles.rightColumn}>
+                  <div className={styles.reference}>
+                    <h4>Referencia Laboral:</h4>
+                    <ul>
+                      <li><strong>Nombre:</strong> {exp.reference.name}</li>
+                      <li><strong>Cargo:</strong> {exp.reference.position}</li>
+                      <li><strong>Teléfono:</strong> {exp.reference.phone}</li>
+                    </ul>
+                  </div>
+
+                    <div className={styles.salary}>
+                      <h4>Remuneración Económica:</h4>
+                      <ul>
+                        <li>${exp.salary}</li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
         </section>
+
+
+
+        {/* Languages and Skills */}
+        <section className={styles.section}>
+          <h3 className={styles.sectionTitle}>
+            <BookType className={styles.sectionIcon} />
+            Idiomas y competencias
+          </h3>
+          <div className={styles.skillsContainer}>
+            <div className={styles.languages}>
+              <h4>Idiomas:</h4>
+              {data.languages.map((lang, index) => (
+                <div key={index} className={styles.languageItem}>
+                  <span>{lang.name}</span>
+                  <span>{lang.level}</span>
+                </div>
+              ))}
+            </div>
+            <div className={styles.skills}>
+              <h4>Competencias:</h4>
+              <ul>
+                {data.skills.map((skill, index) => (
+                  <li key={index}>{skill}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Achievements */}
+        <section className={styles.section}>
+          <h3 className={styles.sectionTitle}>
+            <Award className={styles.sectionIcon} />
+            Logros Relevantes
+          </h3>
+          <ul className={styles.achievements}>
+            {data.achievements.map((achievement, index) => (
+              <li key={index}>{achievement}</li>
+            ))}
+          </ul>
+        </section>
+
 
         {/* Projects */}
         <section className={styles.section}>
@@ -199,13 +264,16 @@ function InfoItem({ label, value, icon }) {
   );
 }
 
-function EducationItem({ title, institution, degree, yearStart, yearEnd }) {
+function EducationItem({ title, degree, institution, yearStart, yearEnd }) {
   return (
     <div className={styles.educationItem}>
       <h4>{title}</h4>
+      <p>
+        <strong>{degree}</strong> ({yearStart} - {yearEnd})
+      </p>
       <p>{institution}</p>
-      <p>{degree}</p>
-      <span>{yearStart} - {yearEnd}</span> {/* Añadir el rango de años */}
     </div>
   );
 }
+
+
